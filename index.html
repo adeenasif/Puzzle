@@ -6,7 +6,6 @@
     <title>🔐 VAULT OF PARITY - MULTIVERSAL ARCHIVE SECURITY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* [All previous CSS styles remain exactly the same until we add notches] */
         :root {
             --dark-bg: #0a0a14;
             --dial-bg: #111125;
@@ -1093,33 +1092,6 @@
                     document.getElementById('hint-btn').disabled = true;
                 }
             }
-
-            // Show solution
-            // function showSolution() {
-            //     if (state.isSolved) return;
-                
-            //     let currentStep = 0;
-            //     const solveInterval = setInterval(() => {
-            //         if (currentStep >= config.solutionSequence.length) {
-            //             clearInterval(solveInterval);
-            //             return;
-            //         }
-                    
-            //         const dialIndex = config.solutionSequence[currentStep];
-            //         if (!state.lockedDials[dialIndex]) {
-            //             rotateDial(dialIndex);
-            //         } else {
-            //             // If locked, try to unlock it first
-            //             const correctDial = dialIndex === 1 || dialIndex === 4 ? 3 : 4;
-            //             if (!state.lockedDials[correctDial]) {
-            //                 rotateDial(correctDial);
-            //             }
-            //         }
-            //         currentStep++;
-            //     }, 1000);
-                
-            //     showNotification("Accessing Prime Sequence from Archives...");
-            // }
 
             // Event Listeners
             document.getElementById('reset-btn').addEventListener('click', initPuzzle);
