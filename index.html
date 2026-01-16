@@ -6,6 +6,7 @@
     <title>🔐 VAULT OF PARITY - MULTIVERSAL ARCHIVE SECURITY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* [All previous CSS styles remain exactly the same until we add notches] */
         :root {
             --dark-bg: #0a0a14;
             --dial-bg: #111125;
@@ -1069,19 +1070,22 @@
                 `;
             }
 
-            // Show hint
+            // Show hint - different hint for each click
             function showHint() {
                 if (state.hints <= 0 || state.isSolved) return;
                 
                 state.hints--;
                 
+                // Different hint based on which hint number this is
                 let hint = '';
-                if (state.moves < 5) {
-                    hint = "Archival Record: Begin with Frequency 2. It resonates with 3 other frequencies and reveals cosmic forces when aligned.";
-                } else if (state.moves < 10) {
-                    hint = "Archival Record: Align Frequency 4 to reveal hidden forces on Frequency 6. Beware of temporal reset conditions!";
-                } else {
-                    hint = "Archival Record: The Prime Sequence is 12 iterations. Work from the stabilized reality signature backwards.";
+                const hintsUsed = 3 - state.hints; // 1, 2, or 3
+                
+                if (hintsUsed === 1) {
+                    hint = "Archival Record: Begin with Frequency 1.";
+                } else if (hintsUsed === 2) {
+                    hint = "Archival Record: The Prime Sequence is 42 iterations.";
+                } else if (hintsUsed === 3) {
+                    hint = "Archival Record: The Sequence ends with 333.";
                 }
                 
                 showNotification(`📜 ARCHIVAL HINT: ${hint} (${state.hints} records left)`);
@@ -1093,7 +1097,6 @@
                 }
             }
 
-            // Event Listeners
             document.getElementById('reset-btn').addEventListener('click', initPuzzle);
             document.getElementById('hint-btn').addEventListener('click', showHint);
             
